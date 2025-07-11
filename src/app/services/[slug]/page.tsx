@@ -5,17 +5,13 @@ import { notFound } from "next/navigation";
 import { LiaArrowLeftSolid } from "react-icons/lia";
 
 type PageProps = {
-  params: {
-    slug: string;
-  };
+  params: Promise<{ slug: string }>;
 };
 
+
 export default async function ServicePage({ params }: PageProps) {
-  // Next.js cree que `params` es una promesa, así que debes "forzarlo" a verlo como objeto
-  const { slug } = params;
-
-  const service = await getServiceBySlug(slug);
-
+  const awaitedParams = await params;  // AWAIT aquí
+  const service = await getServiceBySlug(awaitedParams.slug);
   if (!service) return notFound();
 
   return (
