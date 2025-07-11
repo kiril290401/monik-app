@@ -1,4 +1,4 @@
-import Galeria from "@/components/ui/galeria";
+
 import { socialMediaMenu, tel } from "@/types/data";
 import Link from "next/link";
 

@@ -1,5 +1,6 @@
 "use client";
 
+import { PhotoType } from "@/types/types";
 import Image from "next/image";
 import Masonry from "react-masonry-css";
 
@@ -10,7 +11,12 @@ const breakpointColumnsObj = {
   500: 1,
 };
 
-export default function Galeria( {photos }: any) {
+type GaleriaProps = {
+  photos: PhotoType[];
+};
+
+
+export default function Galeria( {photos} : GaleriaProps) {
 
   return (
     <section className="px-4 py-10">
@@ -19,7 +25,7 @@ export default function Galeria( {photos }: any) {
         className="flex gap-4"
         columnClassName="masonry-column"
       >
-        {photos.map((photo: any) => (
+        {photos.map((photo: PhotoType) => (
           <div key={photo._id} className="mb-4 rounded-lg overflow-hidden">
             <Image
               src={photo.imageUrl}

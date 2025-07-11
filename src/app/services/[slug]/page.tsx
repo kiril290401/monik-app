@@ -4,12 +4,18 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { LiaArrowLeftSolid } from "react-icons/lia";
 
-export default async function ServicePage({
-  params,
-}: {
-  params: { slug: string };
-}) {
-  const service = await getServiceBySlug(params.slug);
+type PageProps = {
+  params: {
+    slug: string;
+  };
+};
+
+export default async function ServicePage({ params }: PageProps) {
+  // Next.js cree que `params` es una promesa, así que debes "forzarlo" a verlo como objeto
+  const { slug } = params;
+
+  const service = await getServiceBySlug(slug);
+
   if (!service) return notFound();
 
   return (
@@ -17,7 +23,7 @@ export default async function ServicePage({
       <div className="flex flex-col md:flex-row gap-10">
         <div className="flex flex-col gap-4">
           <Link
-            href={"/services"}
+            href="/services"
             className="flex justify-start items-center gap-2"
           >
             <LiaArrowLeftSolid />

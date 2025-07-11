@@ -7,7 +7,7 @@ export default defineConfig({
   name: 'default',
   title: 'sanity-monik',
 
-  projectId: '78wmuhaw',
+  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!,
   dataset: 'production',
 
   plugins: [structureTool(), visionTool()],
@@ -15,4 +15,5 @@ export default defineConfig({
   schema: {
     types: schemaTypes,
   },
+  output: 'standalone' // o que esté configurado correctamente para build
 })
