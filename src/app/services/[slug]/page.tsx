@@ -15,7 +15,7 @@ export default async function ServicePage({ params }: PageProps) {
   if (!service) return notFound();
 
   return (
-    <section className="container min-h-screen flex justify-center items-center my-32 md:my-0">
+    <section className="container min-h-screen flex justify-center items-start md:items-center mt-28 md:my-0">
       <div className="flex flex-col md:flex-row gap-10">
         <div className="flex flex-col gap-4">
           <Link

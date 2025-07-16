@@ -7,7 +7,7 @@ export default defineConfig({
   name: 'default',
   title: 'sanity-monik',
 
-  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!,
+  projectId: process.env.SANITY_STUDIO_PROJECT_ID!,
   dataset: 'production',
 
   plugins: [structureTool(), visionTool()],

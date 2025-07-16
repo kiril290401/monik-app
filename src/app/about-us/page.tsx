@@ -5,7 +5,7 @@ import React from "react";
 const Page = () => {
   return (
     // <div className="min-w-screen min-h-screen bg-gradient-to-tr from-[#f7c17a7c] via-[#ffffff] to-[#0000009d]">
-    <div className="min-h-screen container mx-auto px-4 py-16 my-20 md:my-0 flex items-center justify-center  ">
+    <div className="min-h-screen container mx-auto px-4  my-20 xl:my-0 flex ">
       <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-24">
         {/* TEXT */}
         <div className="w-full lg:w-1/2 text-center lg:text-left">

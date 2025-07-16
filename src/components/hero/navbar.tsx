@@ -116,7 +116,7 @@ const Navbar = () => {
                       <Link
                         href={item.url}
                         className="text-xl hover:text-color-principal transition-all duration-300"
-                        
+                        onClick={() => setMenuOpen(false)}
                       >
                         {item.title}
                       </Link>
